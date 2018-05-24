@@ -19,3 +19,7 @@ def gen_bin(M, prefix=""):
     else:
         gen_bin(M-1,prefix+"0")
         gen_bin(M-1,prefix+"1")
+
+
+
+print(generation_nubmer(3,3))
