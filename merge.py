@@ -1,4 +1,4 @@
-def merge_sort(A:list,B:list):
+def merge(A:list,B:list):
     '''Сортировка слиянием
     Слияние отсортированных массивов
     '''
@@ -19,6 +19,24 @@ def merge_sort(A:list,B:list):
     return C
 
 
-result = merge_sort([3,4,5,6], [1,2,3,4])
+def merge_sort(A):
+    print(A)
+    if len(A) <= 1:
+        return
 
-print(result)
+    middle = len(A) // 2
+    left = [A[i] for i in range(0,middle)]
+    right = [A[i] for i in range(middle,len(A))]
+
+    merge_sort(left)
+    merge_sort(right)
+
+    C = merge(left,right)
+    for i in range(len(A)):
+        A[i] = C[i]
+
+    print(A)
+
+
+
+merge_sort([3,4,5,1,2,3,4,5,11,2,3])
